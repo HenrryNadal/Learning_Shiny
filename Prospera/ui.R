@@ -16,9 +16,9 @@ shinyUI(navbarPage(img(src="prospera.png", height =35, width =100),
                                                                     "Adultos Mayores"=7, "Infantil"=8 ))
                                                 ),
                                          
-                                         column(3,radioButtons("radio", label = h4("Nivel de desagrecación"),
+                                         column(3,radioButtons("radio", label = h4("Nivel de desagrecacin"),
                                                       choices = list("Nacional"=1, "Estatal"=2, "Municipal"=3, "Localidad"=4),
-                                                      selected = 2)), 
+                                                      selected = 1)), 
                                          
                                          column(12,fluidRow("Tabla",
                                                   DT::dataTableOutput("table"))),
@@ -26,6 +26,9 @@ shinyUI(navbarPage(img(src="prospera.png", height =35, width =100),
                                          br(),
                                          br(),
                                          br(),
+                                         
+                                         selectInput("select2", label=h3("Gráfica"),
+                                                     choices=list("Aguascalientes", "Baja California")),
                                          
                                          column(12,fluidRow("Grafica", plotOutput("plot1")))
                                          
