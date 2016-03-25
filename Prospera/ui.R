@@ -1,4 +1,5 @@
 library(shiny)
+library(sqldf)
 
 
 # Define UI for application that draws a histogram
@@ -6,15 +7,16 @@ shinyUI(navbarPage(img(src="prospera.png", height =35, width =100),
                         tabPanel("Con Corresponsabilidad", 
                                  fluidPage(
                                          
-                                         plotOutput("map"),
+                                         #plotOutput("map"),
                                          
-                                         column(3,selectInput("select1", label=h4("Que desea ver?"),
+                                         column(3,selectInput("select1", label=h4("¿Que desea ver?"),
                                                      choices = list("Apoyos Emitidos"=1, "Familias"=2,
                                                                     "Municipios"=3, "Localidades"=4,
                                                                     "Integrantes"=5, "Becarios"=6,
-                                                                    "Adultos Mayores"=7, "Infantil"=8 ))),
+                                                                    "Adultos Mayores"=7, "Infantil"=8 ))
+                                                ),
                                          
-                                         column(3,radioButtons("radio", label = h4("Nivel de desagrecacin"),
+                                         column(3,radioButtons("radio", label = h4("Nivel de desagrecación"),
                                                       choices = list("Nacional"=1, "Estatal"=2, "Municipal"=3, "Localidad"=4),
                                                       selected = 2)), 
                                          
